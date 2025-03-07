@@ -159,7 +159,7 @@ export function renderCalloutPrefix(token, md, options = {}) {
       fold === "+" ? " open" : ""
     }>
 <summary class="callout-title">
-<div class="callout-title-icon">
+<div class="callout-icon">
 ${getIcon(token, options)}
 </div>
 <div class="callout-title-inner">${getTitle(token, md)}</div>
@@ -171,7 +171,7 @@ ${getIcon(token, options)}
     return `
 <div class="callout" data-callout="${callout}">
 <div class="callout-title">
-<div class="callout-title-icon">
+<div class="callout-icon">
 ${getIcon(token, options)}
 </div>
 <div class="callout-title-inner">${getTitle(token, md)}</div>
