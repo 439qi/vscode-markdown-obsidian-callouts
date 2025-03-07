@@ -1,0 +1,57 @@
+{
+  "publisher":"TendouAlice",
+  "name": "markdown-obsidian-callout",
+  "displayName": "Markdown Obsidian Callout",
+  "description": "VS Code plugin for Obsidian callouts.",
+  "icon":"res/logo.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/439qi/vscode-markdown-obsidian-callouts"
+  },
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.98.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "files": [
+    "src",
+    "LICENSE",
+    "res/example.png",
+    "res/logo.png",
+    "package.json",
+    "README.md"
+  ],
+  "activationEvents": [],
+  "main": "./src/index.js",
+  "contributes": {
+    "notebookRenderer": [
+      {
+        "id": "alice.markdown-obsidian-callout-extension",
+        "displayName": "Markdown it callout renderer",
+        "entrypoint": {
+          "extends": "vscode.markdown-it-renderer",
+          "path": "./src/notebook.mjs"
+        }
+      }
+    ],
+    "markdown.markdownItPlugins": true,
+    "markdown.previewStyles": [
+      "./src/obsidian-callout.css"
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.98.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "eslint": "^9.21.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1"
+  }
+}
