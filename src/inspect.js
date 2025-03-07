@@ -151,6 +151,8 @@ export function inspectBlockquoteContent(iterable, startIdx) {
 }
 
 export function renderCalloutPrefix(token, md, options = {}) {
+  const fold_icon =
+    '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide chevron-right"><path d="m9 18 6-6-6-6"></path></svg>';
   const callout = token.attrGet("data-callout");
   const fold = token.attrGet("data-callout-fold");
   if (callout && fold) {
@@ -163,7 +165,7 @@ export function renderCalloutPrefix(token, md, options = {}) {
 ${getIcon(token, options)}
 </div>
 <div class="callout-title-inner">${getTitle(token, md)}</div>
-<div class="callout-fold"></div>
+<div class="callout-fold">${fold_icon}</div>
 </summary>
 <div class="callout-content">`;
     // biome-ignore lint/style/noUselessElse: callout can be false
