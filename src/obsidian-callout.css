@@ -315,6 +315,6 @@ p {
   transition: transform 0.1s ease-in-out;
 }
 
-.callout-fold.is-collapsed .svg-icon {
-  transform: rotate(calc(var(--direction) * -1 * 90deg));
+details[open] .callout-fold svg.svg-icon {
+  transform: rotate(calc(1 * 90deg));
 }
